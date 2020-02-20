@@ -22,12 +22,32 @@ marathon_2015_2017_clean = marathon_2015_2017.drop(["Unnamed: 0","Bib","Citizen"
 print("---------------------------------------------------------")
 print(marathon_2015_2017_clean.info())
 
-#새로운 칼럼을 만들어주고 타임델타 값으로 변경해서 넣어준다
-marathon_2015_2017_clean["Official Time New"] = pd.to_timedelta(marathon_2015_2017_clean["Official Time"])
+#타임델타 값으로 변경해서 값을 넣어준다
+marathon_2015_2017_clean["Official Time"] = pd.to_timedelta(marathon_2015_2017_clean["Official Time"])
+marathon_2015_2017_clean["5K"] = pd.to_timedelta(marathon_2015_2017_clean["5K"])
+marathon_2015_2017_clean["10K"] = pd.to_timedelta(marathon_2015_2017_clean["10K"])
+marathon_2015_2017_clean["15K"] = pd.to_timedelta(marathon_2015_2017_clean["15K"])
+marathon_2015_2017_clean["20K"] = pd.to_timedelta(marathon_2015_2017_clean["20K"])
+marathon_2015_2017_clean["Half"] = pd.to_timedelta(marathon_2015_2017_clean["Half"])
+marathon_2015_2017_clean["25K"] = pd.to_timedelta(marathon_2015_2017_clean["25K"])
+marathon_2015_2017_clean["30K"] = pd.to_timedelta(marathon_2015_2017_clean["30K"])
+marathon_2015_2017_clean["35K"] = pd.to_timedelta(marathon_2015_2017_clean["35K"])
+marathon_2015_2017_clean["40K"] = pd.to_timedelta(marathon_2015_2017_clean["40K"])
+marathon_2015_2017_clean["Pace"] = pd.to_timedelta(marathon_2015_2017_clean["Pace"])
 print(marathon_2015_2017_clean.info())
 
 #타임델타값을 시간:분:초 가 아닌 초 단위로 변경해서 넣어준다
-marathon_2015_2017_clean["Official Time Sec"] = marathon_2015_2017_clean["Official Time New"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["Official Time"] = marathon_2015_2017_clean["Official Time"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["5K"] = marathon_2015_2017_clean["5K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["10K"] = marathon_2015_2017_clean["10K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["15K"] = marathon_2015_2017_clean["15K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["20K"] = marathon_2015_2017_clean["20K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["Half"] = marathon_2015_2017_clean["Half"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["25K"] = marathon_2015_2017_clean["25K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["30K"] = marathon_2015_2017_clean["30K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["35K"] = marathon_2015_2017_clean["35K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["40K"] = marathon_2015_2017_clean["40K"].astype("m8[s]").astype(np.int64)
+marathon_2015_2017_clean["Pace"] = marathon_2015_2017_clean["Pace"].astype("m8[s]").astype(np.int64)
 print(marathon_2015_2017_clean.head())
 
 #데이터들을 새로운 csv파일로 저장
