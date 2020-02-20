@@ -51,4 +51,4 @@ marathon_2015_2017_clean["Pace"] = marathon_2015_2017_clean["Pace"].astype("m8[s
 print(marathon_2015_2017_clean.head())
 
 #데이터들을 새로운 csv파일로 저장
-marathon_2015_2017_clean.to_csv("C:\\AI\\data\\marathon_2015_2017.csv")
+marathon_2015_2017_clean.to_csv("C:\\AI\\data\\marathon_2015_2017.csv",index=None,header=True)
