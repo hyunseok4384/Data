@@ -18,7 +18,7 @@ print("---------------------------------------------------------")
 
 #칼럼당 널이 들어있는 합계 출력한 후에 필요없는 칼럼 삭제
 print(marathon_2015_2017.isnull().sum(axis=0))
-marathon_2015_2017_clean = marathon_2015_2017.drop(["Unnamed: 0","Bib","Citizen","Unnamed: 9","Proj Time"],axis="columns")
+marathon_2015_2017_clean = marathon_2015_2017.drop(["Unnamed: 8","Unnamed: 0","Bib","Citizen","Unnamed: 9","Proj Time"],axis="columns")
 print("---------------------------------------------------------")
 print(marathon_2015_2017_clean.info())
 
